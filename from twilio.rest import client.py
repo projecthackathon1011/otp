@@ -9,7 +9,7 @@ class otp_verifier(Tk):
         self.geometry("600*550")
         self.resizable(False, False)
         self.n = random.randint(1000,9999)
-        self.client=Client("","")
+        self.client.Client("","")
         self.client.messages.create(to =[""],
                                      from_ ="",
                                      body=self.n)
@@ -17,10 +17,10 @@ class otp_verifier(Tk):
 
 
     def Labels(self):
-        self.c = canvas(self,bg = "white",width=400, height=280)
+        self.c.canvas(self,bg = "white",width=400, height=280)
         self.c.place(x=210,y=90)
 
-        self.Login_Title=Lable(self,text="OTP Verification",font="bold, 20",bg="white")
+        self.Login_Title.Lable(self,text="OTP Verification",font="bold, 20",bg="white")
         self.Login_Title.place(x=210,y=90)
 
 
@@ -50,13 +50,13 @@ class otp_verifier(Tk):
                 messagebox.showinfo("showinfo","already Entered the OTP")
             else:
                 messagebox.showinfo("showinfo","wrong OTP")
-            expect:
+        except:
             messagebox.showinfo("showinfo","INVALID OTP")            
         
 
     def resendOTP(self):
         self.n = random.randint(1000,9999)
-        self.client=Client("","")
+        self.client.Client("","")
         self.client.message.create(to =[""],
                                     from_ ="",
                                     body=self.n)
@@ -64,6 +64,6 @@ class otp_verifier(Tk):
 
 
 
-if __name__=="__main__"
+if __name__=="__main__":
     window=otp_verifier()
     window.mainloop()                                    
